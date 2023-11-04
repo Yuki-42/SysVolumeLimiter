@@ -107,6 +107,7 @@ namespace WinVolumeLimiter
 
             if (!updating && cbLinked.Checked)
             {
+                if (updownLinkRatio.Value == 0) return;  // Fix a divide by zero error
                 var value = Convert.ToInt32((tbDuckingVolume.Value / updownLinkRatio.Value));
 
                 if (value > tbMonitorVolume.Maximum)
